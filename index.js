@@ -184,8 +184,8 @@ function showSequenceRed() {
   } else {
     total_blue_count--;
   }
-  var ifBlue = (total_blue_count + 1 - total_red_count) * 100 / data.length;
-  var ifRed = (total_blue_count - total_red_count + 1) * 100 / data.length;
+  var ifBlue = ((total_blue_count + 1) / data.length) * 100;
+  var ifRed = ((total_red_count + 1) / data.length) * 100;
   $('#game_if_info').text(`If Green: ${ifBlue.toFixed(2)}%, if Red: ${ifRed.toFixed(2)}%`);
 }
 
