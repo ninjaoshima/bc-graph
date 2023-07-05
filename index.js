@@ -176,7 +176,7 @@ function showSequenceRed() {
 
   var total_blue_count = data.length - total_red_count;
   // var house_edge = (total_blue_count - total_red_count) * 100 / data.length;
-  var house_edge = (total_blue_count / total_red_count) * 100;
+  var house_edge = (total_blue_count / data.length) * 100;
   // var ifGreen = 
   $('#game_info').text(`Total Duration: ${msToTime(duration)}, Blue: ${total_blue_count}, Red: ${total_red_count}, Sub: ${total_blue_count - total_red_count}, House Edge: ${house_edge.toFixed(2)}%`);
   if (data[0].bust < 2) {
