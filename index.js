@@ -176,7 +176,16 @@ function showSequenceRed() {
 
   var total_blue_count = data.length - total_red_count;
   var house_edge = (total_blue_count - total_red_count) * 100 / data.length;
+  // var ifGreen = 
   $('#game_info').text(`Total Duration: ${msToTime(duration)}, Blue: ${total_blue_count}, Red: ${total_red_count}, Sub: ${total_blue_count - total_red_count}, House Edge: ${house_edge.toFixed(2)}%`);
+  if (data[0].bust < 2) {
+    total_red_count--;
+  } else {
+    total_blue_count--;
+  }
+  var ifBlue = (total_blue_count + 1 - total_red_count) * 100 / data.length;
+  var ifRed = (total_blue_count - total_red_count + 1) * 100 / data.length;
+  $('#game_if_info').text(`If Green: ${ifBlue.toFixed(2)}%, if Red: ${ifRed.toFixed(2)}%`);
 }
 
 $('#chart_plus_1_submit').on('click', () => {
